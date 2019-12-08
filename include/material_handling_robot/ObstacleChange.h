@@ -62,8 +62,7 @@ class ObstacleChange {
   ~ObstacleChange();
 
   /**
-   * @brief sets the goal which is a private attribute to this class
-   *  of type move_base_msgs::MoveBaseActionGoal
+   * @brief sets the string for the target point.
    * @param double targetPoint.
    * @return None
    */
