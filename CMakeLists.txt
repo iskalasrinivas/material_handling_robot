@@ -88,7 +88,7 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(materialHandlingRobot src/main.cpp src/PathPlanner.cpp src/RobotController.cpp src/MaterialHandler.cpp)
+add_executable(materialHandlingRobot src/main.cpp src/PathPlanner.cpp src/RobotController.cpp src/MaterialHandler.cpp src/ObstacleChange.cpp)
 
 ## Rename C++ executable without prefix 
 ## The above recommended prefix causes long target names, the following renames the
@@ -158,9 +158,11 @@ if(CATKIN_ENABLE_TESTING)
                      test/main.cpp
                      test/MaterialHandlerTest.cpp
                      test/RobotControllerTest.cpp
+                     test/ObstacleChangeTest.cpp
                      test/PathPlannerTest.cpp
                      src/MaterialHandler.cpp
                      src/RobotController.cpp
+                     src/ObstacleChange.cpp
                       src/PathPlanner.cpp)
   target_link_libraries(materialHandlingTest ${catkin_LIBRARIES})
   include_directories(include ${catkin_INCLUDE_DIRS})
