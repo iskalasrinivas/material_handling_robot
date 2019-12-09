@@ -46,8 +46,8 @@
 MaterialHandler::MaterialHandler() {
   dropOffPosition1.x = 8.0;
   dropOffPosition1.y = 0;
-  dropOffPosition2.x = 10.0;
-  dropOffPosition2.y = 3.0;
+  dropOffPosition2.x = 5.0;
+  dropOffPosition2.y = -5.0;
   dropOffPosition3.x = 5.0;
   dropOffPosition3.y = 1.0;
   pickUpPosition1.x = 3.0;
