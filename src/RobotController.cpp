@@ -27,7 +27,7 @@
  * @copyright 2019
  * @copyright MIT License
  * @file RobotController.cpp
- * Design (iteration 1)
+ * Design (iteration 2)
  * @author Vamshi - Driver
  * @author Raja - Navigator
  * @date 4/12/2019
@@ -47,6 +47,13 @@ RobotController::RobotController() {
  * Destructor for this class.
  */
 RobotController::~RobotController() {
+}
+
+
+geometry_msgs::Twist  RobotController::getVelocity() {
+  geometry_msgs::Twist twiVel;
+  twiVel.linear.x=0;
+  return twiVel;
 }
 
 void RobotController::readVelocity() {

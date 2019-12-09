@@ -27,7 +27,7 @@
  * @copyright 2019
  * @copyright MIT License
  * @file RobotController.h
- * Design (iteration 1)
+ * Design (iteration 2)
  * @author Vamshi - Driver
  * @author Raja - Navigator
  * @date 4/12/2019
@@ -63,6 +63,12 @@ class RobotController {
    * @return None.
    */
   void readVelocity();
+/**
+ * @brief To get the private attribute cmd_vel
+ * @params None
+ * @return  geometry_msgs::Twist, this function returns cmd_vel which is private attribute
+ */
+  geometry_msgs::Twist getVelocity() ;
 
   /**
    * @brief publishes to "/cmd_vel topic" which is subscribed by the turtlebot
