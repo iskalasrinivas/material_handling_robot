@@ -38,8 +38,9 @@
 #include <ros/ros.h>
 #include <geometry_msgs/Twist.h>
 #include <gtest/gtest.h>
-#include "material_handling_robot/RobotController.h"
 #include <memory>
+#include "material_handling_robot/RobotController.h"
+
 
 /**
  * @brief To test for intialization
@@ -50,7 +51,7 @@
 TEST(RobotControllerTest, velocityCallBackTest) {
   // created object for the RobotController class.
   RobotController control;
-  //creating a twist message
+  // creating a twist message
   geometry_msgs::Twist message;
   // setting linear velocity in x is 2
   message.linear.x = 2;

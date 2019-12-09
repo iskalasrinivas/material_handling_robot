@@ -50,7 +50,7 @@ TEST(MaterialHandlerTest, testMethods) {
   // created object for MaterialHandler class
     MaterialHandler handle;
 
-  //made an object of the struct for checking Position
+  // made an object of the struct for checking Position
 
   // checking position for drop off 1
   Position pose1 = handle.getDropOff1();

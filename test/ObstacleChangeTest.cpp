@@ -46,7 +46,7 @@
  * @param setTargetPointTest name of test
  * @return None
  */
-TEST(ObstacleChangeTest,setTargetPointTest) {
+TEST(ObstacleChangeTest, setTargetPointTest) {
   ObstacleChange obs;
   EXPECT_STREQ("10", obs.setTargetPoint(10).c_str());
 }
@@ -56,7 +56,7 @@ TEST(ObstacleChangeTest,setTargetPointTest) {
  * @param spawnObjectTest name of test
  * @return None
  */
-TEST(ObstacleChangeTest,spawnObjectTest) {
+TEST(ObstacleChangeTest, spawnObjectTest) {
   ObstacleChange obs;
   std::string command =
       "rosrun gazebo_ros spawn_model -file src/material_handling_robot/gazebo_models/wood_cube_10cm/model.sdf -sdf -x 0 -y 0 -z 0 -model wood";
@@ -68,9 +68,10 @@ TEST(ObstacleChangeTest,spawnObjectTest) {
  * @param destroyObjectTest name of test
  * @return None
  */
-TEST(ObjectManipulationTest,destroyObjectTest) {
+TEST(ObjectManipulationTest, destroyObjectTest) {
   ObstacleChange obs;
   std::string command =
       "rosservice call /gazebo/delete_model wood";
   EXPECT_STREQ(command.c_str(), obs.destroyObject().c_str());
 }
+
