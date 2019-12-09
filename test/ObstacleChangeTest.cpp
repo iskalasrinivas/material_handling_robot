@@ -40,40 +40,26 @@
 /*
  * @brief Test function to test the string conversion.
  */
-TEST(ObjectManipulationTest,stringTest) {
+TEST(ObstacleChangeTest,setTargetPointTest) {
   ObstacleChange obs;
-  EXPECT_EQ(obs.setTargetPoint(10), "10");
+  EXPECT_STREQ("10", obs.setTargetPoint(10).c_str());
 }
 /*
  * @brief Test function to test the object spawn function.
  */
-TEST(ObjectManipulationTest,showObjectTest) {
+TEST(ObstacleChangeTest,spawnObjectTest) {
   ObstacleChange obs;
   std::string command =
-      "rosrun gazebo_ros spawn_model -file src/warehouse_material_handling_turtlebot/gazebo_models/wood_cube_10cm/model.sdf -sdf -x 0 -y 0 -z 0 -model wood";
-  EXPECT_EQ(obs.spawnObject(0, 0), command);
+      "rosrun gazebo_ros spawn_model -file src/material_handling_robot/gazebo_models/wood_cube_10cm/model.sdf -sdf -x 0 -y 0 -z 0 -model wood";
+  EXPECT_STREQ(command.c_str(), obs.spawnObject(0, 0).c_str());
 }
 /*
  * @brief Test function for removing the object.
  */
-TEST(ObjectManipulationTest,disappearObjectTest) {
+TEST(ObjectManipulationTest,destroyObjectTest) {
   ObstacleChange obs;
   std::string command =
       "rosservice call /gazebo/delete_model model_name: 'wood'";
-  EXPECT_EQ(obs.destroyObject(), command);
-}
-/*
- * @brief Test function to test the object spawn function.
- */
-TEST(ObjectManipulationTest,showObjectNETest) {
-  ObstacleChange obs;
-  EXPECT_EQ(obs.spawnObject(0, 0), "10");
-}
-/*
- * @brief Test function for removing the object.
- */
-TEST(ObjectManipulationTest,disappearObjectNETest) {
-  ObstacleChange obs;
-  EXPECT_EQ(obs.destroyObject(), "0");
+  EXPECT_STREQ(command.c_str(), obs.destroyObject().c_str());
 }
 
