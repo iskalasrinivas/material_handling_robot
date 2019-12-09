@@ -80,6 +80,5 @@ void PathPlanner::reachedTargetCallback(
   if (!msg->status_list.empty()) {
     actionlib_msgs::GoalStatus goalStatus = msg->status_list[0];
     goalReached = goalStatus.status;
-    std::cout << goalReached << std::endl;
   }
 }
