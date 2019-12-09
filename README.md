@@ -66,7 +66,6 @@ Raja and Vamshi worked together on this implementation and alternate commits wer
 - Obstacles are static
 - Speed of robot is limited.
 - Object robot picksup is not more than threshold payload
-[Dependencies Installation steps](https://youtu.be/P_-cCO_jp-s)
 
 # <a name="dependencies"></a> Dependencies
 This project uses the following packages:
@@ -108,12 +107,13 @@ catkin_make run_tests material_handling_robot
 ```
 
 # <a name="demo"></a> Running Demo
-- Demo can be run by following the undermentioned instructions
+- [Demo] (https://www.youtube.com/watch?v=ErphdvKuoK4&feature=youtu.be) can be run by following the undermentioned instructions
 ```
 cd ~/catkin_ws
 roslaunch material_handling_robot turtlebotDemo.launch 
 
 ```
+
 This launches gazebo,rviz with turtlebot 2.Now run following in new terminal
 ```
 rosrun  material_handling_robot materialHandlingRobot
