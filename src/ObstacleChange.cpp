@@ -44,7 +44,7 @@ ObstacleChange::ObstacleChange() {
 ObstacleChange::~ObstacleChange() {
 }
 
-std::string ObstacleChange::targetPtSet(double targetPoint) {
+std::string ObstacleChange::setTargetPoint(double targetPoint) {
 }
 
 void ObstacleChange::spawnObject(double x, double y) {
