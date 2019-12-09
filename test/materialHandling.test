@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="material_handling_robot" name="materialHandlingRobot"  type="materialHandlingRobot" />
+  <test pkg="material_handling_robot" test-name="materialHandlingTest" type="materialHandlingTest" />
+</launch>
