@@ -1,0 +1,196 @@
+\hypertarget{classPathPlanner}{}\section{Path\+Planner Class Reference}
+\label{classPathPlanner}\index{Path\+Planner@{Path\+Planner}}
+
+
+\hyperlink{classPathPlanner}{Path\+Planner} class that implements methods to send goal to move\+\_\+base package and also receive status, that indicates robot reached goal or not.  
+
+
+
+
+{\ttfamily \#include $<$Path\+Planner.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPathPlanner_a376f30d795cfe0a40f8923f49336f7da}{Path\+Planner} ()
+\item 
+\hyperlink{classPathPlanner_a61bd61f848e519df56b75eddd3732ab8}{$\sim$\+Path\+Planner} ()
+\item 
+void \hyperlink{classPathPlanner_a3143ffa68678f4f30917565c339802dc}{set\+Goal} (double x, double y)
+\begin{DoxyCompactList}\small\item\em sets the goal which is a private attribute to this class of type move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Action\+Goal \end{DoxyCompactList}\item 
+move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Action\+Goal \hyperlink{classPathPlanner_a5828b4927eb0a4c4ab64d134ae6fbf3a}{get\+Goal} ()
+\begin{DoxyCompactList}\small\item\em gets the goal that is being published, getter for private data member. \end{DoxyCompactList}\item 
+void \hyperlink{classPathPlanner_a32ee3e597aace449eb1c2e2a7ff44439}{send\+Goal} ()
+\begin{DoxyCompactList}\small\item\em A publisher that sends the goal to move\+\_\+base node by publishing to /move\+\_\+base/goal topic. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classPathPlanner_af2e19a41d18a7071f64c2973f1758c97}{get\+Status} ()
+\begin{DoxyCompactList}\small\item\em A getter that gets the status of the robot currently helpful in tracking the progree of robot motion. \end{DoxyCompactList}\item 
+void \hyperlink{classPathPlanner_a75b2efc17fc0d73a74de77bece725b3e}{subscribe\+Status} ()
+\begin{DoxyCompactList}\small\item\em A subscriber to \char`\"{}/move\+\_\+base/status\char`\"{} topic which is helpful to get status. \end{DoxyCompactList}\item 
+void \hyperlink{classPathPlanner_afa6a07572c40c98be76b19f592e8267d}{reached\+Target\+Callback} (const actionlib\+\_\+msgs\+::\+Goal\+Status\+Array\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em A callback function for status subscriber, this method retrieves current status of the robot and stores in variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPathPlanner}{Path\+Planner} class that implements methods to send goal to move\+\_\+base package and also receive status, that indicates robot reached goal or not. 
+
+M\+IT License
+
+Copyright (c) 2019 Vamshi Bogoju, Raja Srinivas Iskala
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE OR O\+T\+H\+ER D\+E\+A\+L\+I\+N\+GS IN T\+HE S\+O\+F\+T\+W\+A\+RE. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Path\+Planner@{Path\+Planner}!Path\+Planner@{Path\+Planner}}
+\index{Path\+Planner@{Path\+Planner}!Path\+Planner@{Path\+Planner}}
+\subsubsection[{\texorpdfstring{Path\+Planner()}{PathPlanner()}}]{\setlength{\rightskip}{0pt plus 5cm}Path\+Planner\+::\+Path\+Planner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPathPlanner_a376f30d795cfe0a40f8923f49336f7da}{}\label{classPathPlanner_a376f30d795cfe0a40f8923f49336f7da}
+constructor for this class.
+
+M\+IT License
+
+Copyright (c) 2019 Vamshi Bogoju, Raja Srinivas Iskala
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE OR O\+T\+H\+ER D\+E\+A\+L\+I\+N\+GS IN T\+HE S\+O\+F\+T\+W\+A\+RE. \index{Path\+Planner@{Path\+Planner}!````~Path\+Planner@{$\sim$\+Path\+Planner}}
+\index{````~Path\+Planner@{$\sim$\+Path\+Planner}!Path\+Planner@{Path\+Planner}}
+\subsubsection[{\texorpdfstring{$\sim$\+Path\+Planner()}{~PathPlanner()}}]{\setlength{\rightskip}{0pt plus 5cm}Path\+Planner\+::$\sim$\+Path\+Planner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPathPlanner_a61bd61f848e519df56b75eddd3732ab8}{}\label{classPathPlanner_a61bd61f848e519df56b75eddd3732ab8}
+Detructor for this class. 
+
+\subsection{Member Function Documentation}
+\index{Path\+Planner@{Path\+Planner}!get\+Goal@{get\+Goal}}
+\index{get\+Goal@{get\+Goal}!Path\+Planner@{Path\+Planner}}
+\subsubsection[{\texorpdfstring{get\+Goal()}{getGoal()}}]{\setlength{\rightskip}{0pt plus 5cm}move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Action\+Goal Path\+Planner\+::get\+Goal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPathPlanner_a5828b4927eb0a4c4ab64d134ae6fbf3a}{}\label{classPathPlanner_a5828b4927eb0a4c4ab64d134ae6fbf3a}
+
+
+gets the goal that is being published, getter for private data member. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Action\+Goal returns goal position. 
+\end{DoxyReturn}
+\index{Path\+Planner@{Path\+Planner}!get\+Status@{get\+Status}}
+\index{get\+Status@{get\+Status}!Path\+Planner@{Path\+Planner}}
+\subsubsection[{\texorpdfstring{get\+Status()}{getStatus()}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Path\+Planner\+::get\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPathPlanner_af2e19a41d18a7071f64c2973f1758c97}{}\label{classPathPlanner_af2e19a41d18a7071f64c2973f1758c97}
+
+
+A getter that gets the status of the robot currently helpful in tracking the progree of robot motion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t returns the status variable stored in the actionlib\+\_\+msgs\+::\+Goal\+Status\+Array message. 
+\end{DoxyReturn}
+\index{Path\+Planner@{Path\+Planner}!reached\+Target\+Callback@{reached\+Target\+Callback}}
+\index{reached\+Target\+Callback@{reached\+Target\+Callback}!Path\+Planner@{Path\+Planner}}
+\subsubsection[{\texorpdfstring{reached\+Target\+Callback(const actionlib\+\_\+msgs\+::\+Goal\+Status\+Array\+::\+Const\+Ptr \&msg)}{reachedTargetCallback(const actionlib_msgs::GoalStatusArray::ConstPtr &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Planner\+::reached\+Target\+Callback (
+\begin{DoxyParamCaption}
+\item[{const actionlib\+\_\+msgs\+::\+Goal\+Status\+Array\+::\+Const\+Ptr \&}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{classPathPlanner_afa6a07572c40c98be76b19f592e8267d}{}\label{classPathPlanner_afa6a07572c40c98be76b19f592e8267d}
+
+
+A callback function for status subscriber, this method retrieves current status of the robot and stores in variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em actionlib\+\_\+msgs\+::\+Goal\+Status\+Array\+::\+Const\+Ptr\&} & msg A pointer to a message type that has status information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\index{Path\+Planner@{Path\+Planner}!send\+Goal@{send\+Goal}}
+\index{send\+Goal@{send\+Goal}!Path\+Planner@{Path\+Planner}}
+\subsubsection[{\texorpdfstring{send\+Goal()}{sendGoal()}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Planner\+::send\+Goal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPathPlanner_a32ee3e597aace449eb1c2e2a7ff44439}{}\label{classPathPlanner_a32ee3e597aace449eb1c2e2a7ff44439}
+
+
+A publisher that sends the goal to move\+\_\+base node by publishing to /move\+\_\+base/goal topic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\index{Path\+Planner@{Path\+Planner}!set\+Goal@{set\+Goal}}
+\index{set\+Goal@{set\+Goal}!Path\+Planner@{Path\+Planner}}
+\subsubsection[{\texorpdfstring{set\+Goal(double x, double y)}{setGoal(double x, double y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Planner\+::set\+Goal (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classPathPlanner_a3143ffa68678f4f30917565c339802dc}{}\label{classPathPlanner_a3143ffa68678f4f30917565c339802dc}
+
+
+sets the goal which is a private attribute to this class of type move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Action\+Goal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em double} & x which is x position of the goal that is sent. \\
+\hline
+{\em double} & y which is y position of the goal that is sent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\index{Path\+Planner@{Path\+Planner}!subscribe\+Status@{subscribe\+Status}}
+\index{subscribe\+Status@{subscribe\+Status}!Path\+Planner@{Path\+Planner}}
+\subsubsection[{\texorpdfstring{subscribe\+Status()}{subscribeStatus()}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Planner\+::subscribe\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPathPlanner_a75b2efc17fc0d73a74de77bece725b3e}{}\label{classPathPlanner_a75b2efc17fc0d73a74de77bece725b3e}
+
+
+A subscriber to \char`\"{}/move\+\_\+base/status\char`\"{} topic which is helpful to get status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/raja/material\+\_\+handling\+\_\+robot/include/material\+\_\+handling\+\_\+robot/Path\+Planner.\+h\item 
+/home/raja/material\+\_\+handling\+\_\+robot/src/Path\+Planner.\+cpp\end{DoxyCompactItemize}
