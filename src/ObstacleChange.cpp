@@ -56,8 +56,8 @@ std::string ObstacleChange::setTargetPoint(double targetPoint) {
 std::string ObstacleChange::spawnObject(double x, double y) {
   std::string g_x = setTargetPoint(x);
   std::string g_y = setTargetPoint(y);
-  std::string start =
-      "rosrun gazebo_ros spawn_model -file src/material_handling_robot/gazebo_models/wood_cube_10cm/model.sdf -sdf ";
+  std::string start = "rosrun gazebo_ros spawn_model -file src"
+      "/material_handling_robot/gazebo_models/wood_cube_10cm/model.sdf -sdf ";
   std::string x_vals = "-x ";
   std::string y_vals = " -y ";
   std::string end = " -z 0 -model wood";
