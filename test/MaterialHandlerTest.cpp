@@ -39,6 +39,13 @@
 #include <gtest/gtest.h>
 #include "material_handling_robot/MaterialHandler.h"
 
+
+/**
+ * @brief To test MaterialHandle intialization
+ * @param MaterialHandlerTest gtest framework
+ * @param testMethods name of test
+ * @return None
+ */
 TEST(MaterialHandlerTest, testMethods) {
   // created object for MaterialHandler class
     MaterialHandler handle;
