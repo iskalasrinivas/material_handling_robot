@@ -158,7 +158,7 @@ if(CATKIN_ENABLE_TESTING)
                      test/main.cpp
                      test/MaterialHandlerTest.cpp
                      test/RobotControllerTest.cpp
-                     test/test.cpp
+                     test/PathPlannerTest.cpp
                      src/MaterialHandler.cpp
                      src/RobotController.cpp
                       src/PathPlanner.cpp)
