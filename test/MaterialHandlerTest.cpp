@@ -59,8 +59,8 @@ TEST(MaterialHandlerTest, testMethods) {
 
   // checking position for drop off 2
   Position pose2 = handle.getDropOff2();
-  EXPECT_EQ(10.0, pose2.x);
-  EXPECT_EQ(3.0, pose2.y);
+  EXPECT_EQ(5.0, pose2.x);
+  EXPECT_EQ(-5.0, pose2.y);
 
   // checking position for drop off 3
   Position pose3 = handle.getDropOff3();
