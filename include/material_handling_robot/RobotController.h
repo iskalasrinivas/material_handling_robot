@@ -30,9 +30,12 @@
  * Design (iteration 2)
  * @author Vamshi - Driver
  * @author Raja - Navigator
+ * @implementation (iteration 3)
+ * @author Vamshi - navigator
+ * @author Raja - Driver
  * @date 4/12/2019
  * @version 1.0
- * @brief Definition of stub class RobotController that subscribes to velocity topic on
+ * @brief Definition of class RobotController that subscribes to velocity topic on
  * move_base node, and publishes on /cmd_vel topic.
  */
 
@@ -63,12 +66,12 @@ class RobotController {
    * @return None.
    */
   void readVelocity();
-/**
- * @brief To get the private attribute cmd_vel
- * @params None
- * @return  geometry_msgs::Twist, this function returns cmd_vel which is private attribute
- */
-  geometry_msgs::Twist getVelocity() ;
+  /**
+   * @brief To get the private attribute cmd_vel
+   * @params None
+   * @return  geometry_msgs::Twist, this function returns cmd_vel which is private attribute
+   */
+  geometry_msgs::Twist getVelocity();
 
   /**
    * @brief publishes to "/cmd_vel topic" which is subscribed by the turtlebot
@@ -96,4 +99,5 @@ class RobotController {
 };
 
 #endif /* SRC_ROBOTCONTROLLER_H_ */
+
 
