@@ -65,20 +65,3 @@ TEST(PathPlannerTest, InitializationErrorTest) {
   EXPECT_NO_FATAL_FAILURE(PathPlanner planner);
 }
 
-/**
- * @brief To test for Goalstatusarray msg
- * @param PathPlannerTest  gtest framework
- * @param callbackFunctionTest  name of test
- * @return None
- */
-TEST(PathPlannerTest, callbackFunctionTest) {
-  PathPlanner plan;
-  actionlib_msgs::GoalStatusArray msg;
-  // msg.status_list[0].status = 3;
-  // actionlib_msgs::GoalStatusArray::ConstPtr message = &msg;
-  // actionlib_msgs::GoalStatusArray::ConstPtr
-  // msg_p(new actionlib_msgs::GoalStatusArray(msg));
-  // plan.reachedTargetCallback(msg_p);
-  EXPECT_EQ(3, 3);
-}
-
