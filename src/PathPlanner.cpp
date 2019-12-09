@@ -27,12 +27,15 @@
  * @copyright 2019
  * @copyright MIT License
  * @file PathPlanner.cpp
- * Design (iteration 1)
+ * Design (iteration 2)
  * @author Vamshi - Navigator
  * @author Raja - Driver
+ * Implementation (iteration-3)
+ * @author Vamshi - Driver
+ * @author Raja - Navigator
  * @date 4/12/2019
  * @version 1.0
- * @brief Stub implementation of class PathPlanner that calls the inbuilt Path planning
+ * @brief Implementation of class PathPlanner that calls the inbuilt Path planning
  * algorithm in navigation stack.
  */
 
@@ -49,21 +52,34 @@ move_base_msgs::MoveBaseActionGoal PathPlanner::getGoal() {
 }
 
 void PathPlanner::setGoal(double x, double y) {
-  (void) x;
-  (void) y;
+  // Define the initial velocity message
+  goalMsg.goal.target_pose.header.frame_id = "map";
+  goalMsg.goal.target_pose.header.stamp = ros::Time::now();
+  goalMsg.goal.target_pose.pose.position.x = x;
+  goalMsg.goal.target_pose.pose.position.y = y;
+  goalMsg.goal.target_pose.pose.position.z = 0;
+  geometry_msgs::Quaternion quat = tf::createQuaternionMsgFromYaw(0);
+  goalMsg.goal.target_pose.pose.orientation = quat;
 }
 
 void PathPlanner::sendGoal() {
+  publishGoal.publish(goalMsg);
 }
 
 uint8_t PathPlanner::getStatus() {
-  return 1;
+  return goalReached;
 }
 
 void PathPlanner::subscribeStatus() {
+  readStatus = nodeHandler.subscribe("/move_base/status", 200,
+                                     &PathPlanner::reachedTargetCallback, this);
 }
 
 void PathPlanner::reachedTargetCallback(
     const actionlib_msgs::GoalStatusArray::ConstPtr& msg) {
-  (void) msg;
+  if (!msg->status_list.empty()) {
+    actionlib_msgs::GoalStatus goalStatus = msg->status_list[0];
+    goalReached = goalStatus.status;
+    std::cout << goalReached << std::endl;
+  }
 }
