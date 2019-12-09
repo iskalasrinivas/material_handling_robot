@@ -30,9 +30,12 @@
  * Design (iteration 1)
  * @author Vamshi - Navigator
  * @author Raja - Driver
+ * @implementation (iteration 3)
+ * @author Vamshi - Driver
+ * @author Raja - Navigator
  * @date 4/12/2019
  * @version 1.0
- * @brief definition of methods for Stub ObstacleChange class.
+ * @brief definition of methods for ObstacleChange class.
  */
 
 #include <iostream>
@@ -86,4 +89,5 @@ class ObstacleChange {
 };
 
 #endif /* SRC_OBSTACLECHANGE_H_ */
+
 
