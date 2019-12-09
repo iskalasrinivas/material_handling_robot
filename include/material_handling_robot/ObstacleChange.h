@@ -66,7 +66,7 @@ class ObstacleChange {
    * @param double targetPoint.
    * @return None
    */
-  std::string targetPtSet(double targetPoint);
+  std::string setTargetPoint(double targetPoint);
 
   /**
    * @brief spawns a wooden block in gazebo at location x, y specified.
