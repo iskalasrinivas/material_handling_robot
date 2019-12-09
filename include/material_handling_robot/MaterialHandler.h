@@ -30,9 +30,12 @@
  * Design (iteration 1)
  * @author Vamshi - Driver
  * @author Raja - navigator
+ * @implementation (iteration 3)
+ * @author Vamshi - navigator
+ * @author Raja - Driver
  * @date 4/12/2019
  * @version 1.0
- * @brief Stub class Definition for MaterialHandler class.
+ * @brief class Definition for MaterialHandler class.
  */
 
 #ifndef SRC_MATERIALHANDLER_H_
@@ -136,4 +139,5 @@ class MaterialHandler {
 };
 
 #endif /* SRC_MATERIALHANDLER_H_ */
+
 
