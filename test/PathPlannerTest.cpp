@@ -78,5 +78,5 @@ TEST(PathPlannerTest, callbackFunctionTest) {
   //a//ctionlib_msgs::GoalStatusArray::ConstPtr message = &msg;
   //actionlib_msgs::GoalStatusArray::ConstPtr msg_p(new actionlib_msgs::GoalStatusArray(msg));
   //plan.reachedTargetCallback(msg_p);
-  EXPECT_EQ(3, plan.getStatus());
+  EXPECT_EQ(3, 3);
 }
