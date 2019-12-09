@@ -88,9 +88,9 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(material_handling_robot src/main.cpp src/PathPlanner.cpp src/RobotController.cpp)
+add_executable(materialHandlingRobot src/main.cpp src/PathPlanner.cpp src/RobotController.cpp src/MaterialHandler.cpp)
 
-## Rename C++ executable without prefix
+## Rename C++ executable without prefix 
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
 ## e.g. "rosrun someones_pkg node" instead of "rosrun someones_pkg someones_pkg_node"
@@ -101,7 +101,7 @@ add_executable(material_handling_robot src/main.cpp src/PathPlanner.cpp src/Robo
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(material_handling_robot
+target_link_libraries(materialHandlingRobot
    ${catkin_LIBRARIES}
 )
 
@@ -150,12 +150,26 @@ target_link_libraries(material_handling_robot
 #############
 ## Testing ##
 #############
+if(CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
+  add_rostest_gtest(materialHandlingTest
+                     test/materialHandling.test
+                     test/main.cpp
+                     test/MaterialHandlerTest.cpp
+                     test/RobotControllerTest.cpp
+                     test/test.cpp
+                     src/MaterialHandler.cpp
+                     src/RobotController.cpp
+                      src/PathPlanner.cpp)
+  target_link_libraries(materialHandlingTest ${catkin_LIBRARIES})
+  include_directories(include ${catkin_INCLUDE_DIRS})
+  add_dependencies(
+  materialHandlingTest
+  materialHandlingRobot
+  ${catkin_EXPORTED_TARGETS}
+  )
 
-## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_material_handling_robot.cpp)
-# if(TARGET ${PROJECT_NAME}-test)
-#   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
-# endif()
+endif()
 
-## Add folders to be run by python nosetests
-# catkin_add_nosetests(test)
+
