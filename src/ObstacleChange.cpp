@@ -45,12 +45,19 @@ ObstacleChange::~ObstacleChange() {
 }
 
 std::string ObstacleChange::setTargetPoint(double targetPoint) {
+  std::string a = "a";
+  return a;
 }
 
-void ObstacleChange::spawnObject(double x, double y) {
+std::string ObstacleChange::spawnObject(double x, double y) {
   (void) x;
   (void) y;
+  std::string temp = "Void";
+  return temp;
 }
 
-void ObstacleChange::destroyObject() {
+std::string ObstacleChange::destroyObject() {
+  std::string temp = "Void";
+  return temp;
 }
+
