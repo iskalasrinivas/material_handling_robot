@@ -1,7 +1,7 @@
 <launch>
 <!-- Launching Node for material_handling_robot package -->
-<node pkg="material_handling_robot" name="material_handling_robot"
-	type="material_handling_robot"
+<node pkg="material_handling_robot" name="materialHandlingRobot"
+	type="materialHandlingRobot"
 	output="screen"
 	launch-prefix="gnome-terminal --command">
 <rosparam file="$(find material_handling_robot)/params/costmap_common_params_waffle.yaml" command="load" ns="/costmap_node/costmap" />
