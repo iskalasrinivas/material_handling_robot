@@ -58,8 +58,9 @@ TEST(ObstacleChangeTest, setTargetPointTest) {
  */
 TEST(ObstacleChangeTest, spawnObjectTest) {
   ObstacleChange obs;
-  std::string command =
-      "rosrun gazebo_ros spawn_model -file src/material_handling_robot/gazebo_models/wood_cube_10cm/model.sdf -sdf -x 0 -y 0 -z 0 -model wood";
+  std::string command = "rosrun gazebo_ros spawn_model -file src"
+      "/material_handling_robot/gazebo_models"
+      "/wood_cube_10cm/model.sdf -sdf -x 0 -y 0 -z 0 -model wood";
   EXPECT_STREQ(command.c_str(), obs.spawnObject(0, 0).c_str());
 }
 /**
@@ -70,8 +71,7 @@ TEST(ObstacleChangeTest, spawnObjectTest) {
  */
 TEST(ObjectManipulationTest, destroyObjectTest) {
   ObstacleChange obs;
-  std::string command =
-      "rosservice call /gazebo/delete_model wood";
+  std::string command = "rosservice call /gazebo/delete_model wood";
   EXPECT_STREQ(command.c_str(), obs.destroyObject().c_str());
 }
 
