@@ -64,7 +64,7 @@ class ObstacleChange {
   /**
    * @brief sets the string for the target point.
    * @param double targetPoint.
-   * @return None
+   * @return std::string
    */
   std::string setTargetPoint(double targetPoint);
 
@@ -72,17 +72,18 @@ class ObstacleChange {
    * @brief spawns a wooden block in gazebo at location x, y specified.
    * @param double x which is x position on the map where the model to spawns.
    * @param double y which is y position on the map where the model to spawns.
-   * @return None
+   * @return std::string
    */
-  void spawnObject(double x, double y);
+  std::string spawnObject(double x, double y);
 
   /**
    * @brief destroys the spawned object indicating robot picked up
    * the object.
    * @param None
-   * @return None
+   * @return std::string
    */
-  void destroyObject();
+  std::string destroyObject();
 };
 
 #endif /* SRC_OBSTACLECHANGE_H_ */
+
