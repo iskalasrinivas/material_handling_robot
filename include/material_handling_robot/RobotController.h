@@ -46,6 +46,10 @@
 #include "geometry_msgs/Twist.h"
 #include "move_base_msgs/MoveBaseAction.h"
 
+/**
+ * @brief RobotController class that subscribes to /raw_cmd_vel topic
+ * and remaps to /cmd_vel topic.
+ */
 class RobotController {
  public:
 
