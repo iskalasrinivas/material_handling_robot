@@ -23,13 +23,16 @@
  *  DEALINGS IN THE SOFTWARE.
  */
 
-/*
+/**
  * @copyright 2019
  * @copyright MIT License
  * @file ObstacleChangeTest.cpp
  * Design (iteration 1)
  * @author Vamshi - Navigator
  * @author Raja - Driver
+ * @implementation (iteration 3)
+ * @author Vamshi - Driver
+ * @author Raja - Navigator
  * @date 4/12/2019
  * @version 1.0
  * @brief Tests the member methods of ObstacleChange class.
@@ -37,15 +40,21 @@
 
 #include "gtest/gtest.h"
 #include "material_handling_robot/ObstacleChange.h"
-/*
+/**
  * @brief Test function to test the string conversion.
+ * @param ObstacleChangeTest gtest framework
+ * @param setTargetPointTest name of test
+ * @return None
  */
 TEST(ObstacleChangeTest,setTargetPointTest) {
   ObstacleChange obs;
   EXPECT_STREQ("10", obs.setTargetPoint(10).c_str());
 }
-/*
+/**
  * @brief Test function to test the object spawn function.
+ * @param ObstacleChangeTest gtest framework
+ * @param spawnObjectTest name of test
+ * @return None
  */
 TEST(ObstacleChangeTest,spawnObjectTest) {
   ObstacleChange obs;
@@ -53,13 +62,15 @@ TEST(ObstacleChangeTest,spawnObjectTest) {
       "rosrun gazebo_ros spawn_model -file src/material_handling_robot/gazebo_models/wood_cube_10cm/model.sdf -sdf -x 0 -y 0 -z 0 -model wood";
   EXPECT_STREQ(command.c_str(), obs.spawnObject(0, 0).c_str());
 }
-/*
+/**
  * @brief Test function for removing the object.
+ * @param ObstacleChangeTest gtest framework
+ * @param destroyObjectTest name of test
+ * @return None
  */
 TEST(ObjectManipulationTest,destroyObjectTest) {
   ObstacleChange obs;
   std::string command =
-      "rosservice call /gazebo/delete_model model_name: 'wood'";
+      "rosservice call /gazebo/delete_model wood";
   EXPECT_STREQ(command.c_str(), obs.destroyObject().c_str());
 }
-
