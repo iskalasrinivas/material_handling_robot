@@ -30,9 +30,12 @@
  * Design (iteration 1)
  * @author Vamshi - Navigator
  * @author Raja - Driver
+ * @implementation (iteration 3)
+ * @author Vamshi - Driver
+ * @author Raja - Navigator
  * @date 4/12/2019
  * @version 1.0
- * @brief Stub implementation of class ObstacleChange.
+ * @brief implementation of class ObstacleChange.
  */
 
 #include "material_handling_robot/ObstacleChange.h"
@@ -45,19 +48,38 @@ ObstacleChange::~ObstacleChange() {
 }
 
 std::string ObstacleChange::setTargetPoint(double targetPoint) {
-  std::string a = "a";
-  return a;
+  std::ostringstream os;
+  os << targetPoint;
+  return os.str();
 }
 
 std::string ObstacleChange::spawnObject(double x, double y) {
-  (void) x;
-  (void) y;
-  std::string temp = "Void";
-  return temp;
+  std::string g_x = setTargetPoint(x);
+  std::string g_y = setTargetPoint(y);
+  std::string start =
+      "rosrun gazebo_ros spawn_model -file src/material_handling_robot/gazebo_models/wood_cube_10cm/model.sdf -sdf ";
+  std::string x_vals = "-x ";
+  std::string y_vals = " -y ";
+  std::string end = " -z 0 -model wood";
+  std::string cmd = start + x_vals + g_x + y_vals + g_y + end;
+  const char* command = cmd.c_str();
+  ROS_INFO("Set the objects in the map %s", command);
+  system(command);
+  return cmd;
 }
 
 std::string ObstacleChange::destroyObject() {
-  std::string temp = "Void";
-  return temp;
+  // Rosservice to remove the model from the gazebo environment.
+  std::string destroy = "rosservice call /gazebo/delete_model";
+  // models name to be removed
+  std::string cont = " wood";
+  // Joining the string to make it a command.
+  std::string cmd = destroy + cont;
+  const char* command = cmd.c_str();
+  ROS_INFO("Removed the Object from the map");
+  // Send the command to the system.
+  system(command);
+  return cmd;
 }
+
 
