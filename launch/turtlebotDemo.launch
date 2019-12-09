@@ -1,6 +1,8 @@
 <launch>
   
 <!-- Arguments -->
+<arg name="record" default="false" />
+<arg name="secs" default="30"/>
 <arg name="world_file"
        default="$(find material_handling_robot)/data/world/hospital.world"/>
 <arg name="x_pos_vals" default="0.0"/>
@@ -16,19 +18,22 @@
        <arg name="map_file" value="$(find material_handling_robot)/data/map/hospitalmap.yaml"/>
  </include>
 
-<!-- Launching Node for material_handling_robot package -->
-<node pkg="material_handling_robot" name="materialHandlingRobot"
-	type="materialHandlingRobot"
-	output="screen"
-	launch-prefix="gnome-terminal --command">
-<rosparam file="$(find material_handling_robot)/params/costmap_common_params_waffle.yaml" command="load" ns="/costmap_node/costmap" />
-<rosparam file="$(find material_handling_robot)/params/global_costmap_params.yaml" command="load" ns="global_costmap" />
-<rosparam file="$(find material_handling_robot)/params/local_costmap_params.yaml" command="load" ns="local_costmap" />
-<rosparam file="$(find material_handling_robot)/params/move_base_params.yaml" command="load" />
-<rosparam file="$(find material_handling_robot)/params/dwa_local_planner_params_waffle.yaml" command="load" />
-</node>
+<!-- param files -->
+<rosparam file="$(find material_handling_robot)/param/costmap_common_params.yaml" command="load" ns="/costmap_node/costmap" />
+<rosparam file="$(find material_handling_robot)/param/global_costmap_params.yaml" command="load" ns="global_costmap" />
+<rosparam file="$(find material_handling_robot)/param/local_costmap_params.yaml" command="load" ns="local_costmap" />
+<rosparam file="$(find material_handling_robot)/param/move_base_params.yaml" command="load" />
+<rosparam file="$(find material_handling_robot)/param/dwa_local_planner_params.yaml" command="load" />
 
 <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch"/>
+
+<node
+     pkg="rosbag"
+     name="record"
+     type="record"
+     args="-a -x /camera/(.*) --duration=$(arg secs) -O $(find material_handling_robot)/results/turtlebotRecord.bag"
+  if="$(arg record)"
+ />
 
 </launch>
 
