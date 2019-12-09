@@ -30,9 +30,12 @@
  * Design (iteration 1)
  * @author Vamshi - Driver
  * @author Raja - navigator
+ * implementation (iteration 3)
+ * @author Vamshi - navigator
+ * @author Raja - Driver
  * @date 4/12/2019
  * @version 1.0
- * @brief Stub class implementation for MaterialHandler class.
+ * @brief class implementation for MaterialHandler class.
  */
 
 #include "material_handling_robot/MaterialHandler.h"
@@ -47,8 +50,8 @@ MaterialHandler::MaterialHandler() {
   dropOffPosition2.y = 3.0;
   dropOffPosition3.x = 5.0;
   dropOffPosition3.y = 1.0;
-  pickUpPosition1.x = 0;
-  pickUpPosition1.y = 0;
+  pickUpPosition1.x = 3.0;
+  pickUpPosition1.y = 7.0;
   pickUpPosition2.x = 4.0;
   pickUpPosition2.y = 6.0;
   pickUpPosition3.x = 7.0;
@@ -62,43 +65,26 @@ MaterialHandler::~MaterialHandler() {
 }
 
 Position MaterialHandler::getDropOff1() {
-  Position pos;
-  pos.x = 1;
-  pos.y = 1;
-  return pos;
+  return dropOffPosition1;
 }
 
 Position MaterialHandler::getDropOff2() {
-  Position pos;
-  pos.x = 1;
-  pos.y = 1;
-  return pos;
+  return dropOffPosition2;
 }
 
 Position MaterialHandler::getDropOff3() {
-  Position pos;
-  pos.x = 1;
-  pos.y = 1;
-  return pos;
+  return dropOffPosition3;
 }
 
 Position MaterialHandler::getPickUp1() {
-  Position pos;
-  pos.x = 1;
-  pos.y = 1;
-  return pos;
+  return pickUpPosition1;
 }
 
 Position MaterialHandler::getPickUp2() {
-  Position pos;
-  pos.x = 1;
-  pos.y = 1;
-  return pos;
+  return pickUpPosition2;
 }
 
 Position MaterialHandler::getPickUp3() {
-  Position pos;
-  pos.x = 1;
-  pos.y = 1;
-  return pos;
+  return pickUpPosition3;
 }
+
