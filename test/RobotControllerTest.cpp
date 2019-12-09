@@ -42,8 +42,10 @@
 #include <memory>
 
 /**
- * Tests the velocitycallBack method and get velocity method of the
- * Robot Controller Class.
+ * @brief To test for intialization
+ * @param RobotControllerTest gtest framework
+ * @param velocityCallBackTest name of test
+ * @return None
  */
 TEST(RobotControllerTest, velocityCallBackTest) {
   // created object for the RobotController class.
