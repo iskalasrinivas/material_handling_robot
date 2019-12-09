@@ -27,12 +27,15 @@
  * @copyright 2019
  * @copyright MIT License
  * @file PathPlanner.h
- * Design (iteration 1)
+ * Design (iteration 2)
  * @author Vamshi - Navigator
  * @author Raja - Driver
+ * Implementation (iteration-3)
+ * @author Vamshi - Driver
+ * @author Raja - Navigator
  * @date 4/12/2019
  * @version 1.0
- * @brief Definition of stub class PathPlanner that calls the inbuilt Path planning
+ * @brief Definition of class PathPlanner that calls the inbuilt Path planning
  * algorithm in navigation stack.
  */
 
