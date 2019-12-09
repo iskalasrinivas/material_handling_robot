@@ -30,9 +30,12 @@
  * Design (iteration 2)
  * @author Vamshi - Driver
  * @author Raja - Navigator
+ * @implementation (iteration 3)
+ * @author Vamshi - navigator
+ * @author Raja - Driver
  * @date 4/12/2019
  * @version 1.0
- * @brief Implementation of stub class RobotController that subscribes to velocity topic on
+ * @brief Implementation of RobotController class that subscribes to velocity topic on
  * move_base node, and publishes on /cmd_vel topic.
  */
 
@@ -49,20 +52,23 @@ RobotController::RobotController() {
 RobotController::~RobotController() {
 }
 
-
-geometry_msgs::Twist  RobotController::getVelocity() {
-  geometry_msgs::Twist twiVel;
-  twiVel.linear.x=0;
-  return twiVel;
+geometry_msgs::Twist RobotController::getVelocity() {
+  return commandVelocity;
 }
 
 void RobotController::readVelocity() {
+  subscribeVelocity = nodeHandler.subscribe(
+      "/navigation_velocity_smoother/raw_cmd_vel", 200,
+      &RobotController::velocityCallback, this);
 }
 
 void RobotController::velocityCallback(
     const geometry_msgs::Twist::ConstPtr& msg) {
+  commandVelocity = *(msg);
 }
 
 void RobotController::writeVelocity() {
+  publishVelocity.publish(commandVelocity);
 }
+
 
