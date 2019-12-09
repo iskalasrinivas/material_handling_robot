@@ -1,7 +1,7 @@
 # Material_Handling_Robot
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://travis-ci.org/vamshibogoju/material_handling_robot.svg?branch=iteration_development_3)](https://travis-ci.org/vamshibogoju/material_handling_robot)
-[![Coverage Status](https://coveralls.io/repos/github/vamshibogoju/material_handling_robot/badge.svg?branch=iteration_development_3)](https://coveralls.io/github/vamshibogoju/material_handling_robot?branch=iteration_development_3)
+[![Build Status](https://travis-ci.org/vamshibogoju/material_handling_robot.svg?branch=master)](https://travis-ci.org/vamshibogoju/material_handling_robot)
+[![Coverage Status](https://coveralls.io/repos/github/vamshibogoju/material_handling_robot/badge.svg?branch=master)](https://coveralls.io/github/vamshibogoju/material_handling_robot?branch=master)
 ---
 Table Contents:
 - [Authors](#authors)
@@ -62,6 +62,8 @@ The Sprint Planning and review can be accessed [here](https://docs.google.com/do
 
 Raja and Vamshi worked together on this implementation and alternate commits were made. The commits are made by the driver while the other person acted as navigator.
 
+# Presentation
+The presentation slides for this project can be found [here](https://docs.google.com/presentation/d/1pa_In_-e-sjF0GMJq2e1tROK6nKJeRI5j8uvjNo7ng0/edit?usp=sharing)
 # Assumptions
 - Obstacles are static
 - Speed of robot is limited.
@@ -84,7 +86,15 @@ This project uses the following packages:
  * actionlib_msgs
  
 ## Build Instructions
+If Turtlebot package is not installed,use below comment
 
+```
+sudo apt-get install ros-kinetic-turtlebot*
+```
+If navigation stack is not installed, follow below comment
+```
+sudo apt-get install ros-kinetic-navigation
+```
 If you followed above package dependencies intallation section follow this`
 
 ```
@@ -133,6 +143,7 @@ recorded bag file will be stored in the results folder and records all except ca
 
 
 ## Running ROSBAG
+Due to file size issue, rosbag file is not uploaded in this repo, however, it can be found [here](https://drive.google.com/file/d/1ORe6faqPg-HGm-RIjpMmlgQUtKXAPSyw/view?usp=sharing).Download this file into results folder.
 Navigate to the results folder
 ```
 cd ~/catkin_ws/src/ material_handling_robot/results
@@ -140,3 +151,20 @@ cd ~/catkin_ws/src/ material_handling_robot/results
 play the bag file
 ```
 rosbag play turtlebotRecord.bag
+```
+## Doxygen
+
+To install doxygen 
+```
+sudo apt install doxygen
+```
+To create Doxygen documentation
+```
+doxygen -g Creates a Doxyfile, edit the configuration of the doxyfile and run: doxygen ./Doxyfile
+```
+
+# Challenges Faced
+-  Converting the message type of the callback functions input for testing was really difficult for actionlib_msgs data type.
+-  Gmapping gave lot of errors when creating the map of the for the world file provided, the map deformed a lot of time, we repeated so many times.
+-  Use of action client to send goal to the move_base package was very difficult and the documentation provided was not clear.
+
