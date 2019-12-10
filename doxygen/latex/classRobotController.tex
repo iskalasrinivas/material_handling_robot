@@ -19,7 +19,7 @@
 void \hyperlink{classRobotController_a3987f42087c62ea2fd82c425ec33a31b}{read\+Velocity} ()
 \begin{DoxyCompactList}\small\item\em subscribes to \char`\"{}/navigation\+\_\+velocity\+\_\+smoother/raw\+\_\+cmd\+\_\+vel\char`\"{} topic where move\+\_\+base publishes the velocity messages. \end{DoxyCompactList}\item 
 geometry\+\_\+msgs\+::\+Twist \hyperlink{classRobotController_a8016cd41d0d175cc3994f81785bb69ae}{get\+Velocity} ()
-\begin{DoxyCompactList}\small\item\em To get the private attribute cmd\+\_\+vel  None. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em To get the private attribute cmd\+\_\+vel. \end{DoxyCompactList}\item 
 void \hyperlink{classRobotController_a14d95aa76b39dbde8a5ff34533ea4634}{write\+Velocity} ()
 \begin{DoxyCompactList}\small\item\em publishes to \char`\"{}/cmd\+\_\+vel topic\char`\"{} which is subscribed by the turtlebot and receives velocity messages. \end{DoxyCompactList}\item 
 void \hyperlink{classRobotController_a6297a4573ddb0d096f8f247a7add0cf1}{velocity\+Callback} (const geometry\+\_\+msgs\+::\+Twist\+::\+Const\+Ptr \&msg)
@@ -76,8 +76,13 @@ Destructor for this class.
 )}\hypertarget{classRobotController_a8016cd41d0d175cc3994f81785bb69ae}{}\label{classRobotController_a8016cd41d0d175cc3994f81785bb69ae}
 
 
-To get the private attribute cmd\+\_\+vel  None. 
+To get the private attribute cmd\+\_\+vel. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 geometry\+\_\+msgs\+::\+Twist, this function returns cmd\+\_\+vel which is private attribute 
 \end{DoxyReturn}
@@ -142,5 +147,5 @@ None.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/raja/material\+\_\+handling\+\_\+robot/include/material\+\_\+handling\+\_\+robot/Robot\+Controller.\+h\item 
-/home/raja/material\+\_\+handling\+\_\+robot/src/Robot\+Controller.\+cpp\end{DoxyCompactItemize}
+include/material\+\_\+handling\+\_\+robot/Robot\+Controller.\+h\item 
+src/Robot\+Controller.\+cpp\end{DoxyCompactItemize}
