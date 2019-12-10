@@ -23,7 +23,7 @@
  *  DEALINGS IN THE SOFTWARE.
  */
 
-/*
+/**
  * @copyright 2019
  * @copyright MIT License
  * @file main.cpp

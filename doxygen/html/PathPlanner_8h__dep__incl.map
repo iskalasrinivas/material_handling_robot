@@ -1,0 +1,4 @@
+<map id="include/material_handling_robot/PathPlanner.h" name="include/material_handling_robot/PathPlanner.h">
+<area shape="rect" id="node2" href="$PathPlanner_8cpp.html" title="Implementation of class PathPlanner that calls the inbuilt Path planning algorithm in navigation stac..." alt="" coords="5,95,145,121"/>
+<area shape="rect" id="node3" href="$PathPlannerTest_8cpp.html" title="Tests the member methods of PathPlanner class. " alt="" coords="170,95,341,121"/>
+</map>
